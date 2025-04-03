@@ -30,9 +30,11 @@ keymap.set("n", "<C-m>", "<C-i>", opts)
 keymap.set("n", "te", ":tabedit")
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
+
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
@@ -56,12 +58,12 @@ keymap.set("n", "<Leader>9", "<Cmd>BufferLineGoToBuffer -1<CR>", {})
 
 -- Moving text
 -- Move text up and down
-keymap.set("n", "<C-Down>", "<Esc>:m .+1<CR>", opts)
-keymap.set("n", "<C-Up>", "<Esc>:m .-2<CR>", opts)
-keymap.set("v", "<C-Down>", ":m .+1<CR>", opts)
-keymap.set("v", "<C-Up>", ":m .-2<CR>", opts)
-keymap.set("x", "<C-Down>", ":move '>+1<CR>gv-gv", opts)
-keymap.set("x", "<C-Up>", ":move '<-2<CR>gv-gv", opts)
+keymap.set("n", "<S-C-Down>", "<Esc>:m .+1<CR>", opts)
+keymap.set("n", "<S-C-Up>", "<Esc>:m .-2<CR>", opts)
+keymap.set("v", "<S-C-Down>", ":m .+1<CR>", opts)
+keymap.set("v", "<S-C-Up>", ":m .-2<CR>", opts)
+keymap.set("x", "<S-C-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "<S-C-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
