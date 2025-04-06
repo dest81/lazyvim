@@ -23,6 +23,10 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 -- keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 
+-- Prevent deleting from also copying
+vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true })
+vim.keymap.set("n", "dd", '"_dd', { noremap = true })
+
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
