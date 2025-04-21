@@ -14,6 +14,8 @@ keymap.set("i", "jj", "<Esc>", opts)
 keymap.set({ "n", "v" }, "d", '"_d', opts)
 keymap.set("n", "dd", '"_dd', opts)
 keymap.set("n", "x", '"_x', opts)
+-- cut
+vim.keymap.set("n", "<leader>dd", "dd", { noremap = true, silent = true })
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
