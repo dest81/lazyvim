@@ -2,4 +2,4 @@
 require("config.lazy")
 -- require("monokai-pro")._load("octagon")
 -- require("catppuccin").load("mocha")
-require("catppuccin").load("frappe")
+-- require("tokyonight").load("night")
