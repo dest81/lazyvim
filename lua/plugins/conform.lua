@@ -8,7 +8,17 @@ return {
     formatters = {
       djlint = {
         command = "djlint",
-        args = { "--reformat", "--indent", "2", "--preserve-blank-lines", "-" },
+        args = {
+          "--reformat",
+          "--indent",
+          "2",
+          "--max-attribute-length",
+          "1000",
+          "--profile",
+          "django",
+          "--preserve-blank-lines",
+          "-",
+        },
         stdin = true,
       },
     },
