@@ -9,13 +9,17 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- ESC to jj
 keymap.set("i", "jj", "<Esc>", opts)
+keymap.set("i", "nn", "<Esc>", opts)
+keymap.set("v", "nn", "<Esc>", opts)
 
--- Prevent deleting from also copying
-keymap.set({ "n", "v" }, "d", '"_d', opts)
+-- Prevent deleting from copying
 keymap.set("n", "dd", '"_dd', opts)
+keymap.set({ "n", "v" }, "d", '"_d', opts)
 keymap.set("n", "x", '"_x', opts)
+keymap.set("n", "D", '"_D', opts)
+
 -- cut
-vim.keymap.set("n", "<leader>dd", "dd", { noremap = true, silent = true })
+keymap.set("n", "<leader>dd", "dd", opts)
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
@@ -29,7 +33,7 @@ keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
--- Move window
+-- Move windnow
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
@@ -41,7 +45,7 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
--- pIck a buffer
+-- Pick a buffer
 keymap.set("n", "<Leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", {})
 keymap.set("n", "<Leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", {})
 keymap.set("n", "<Leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", {})
@@ -52,9 +56,9 @@ keymap.set("n", "<Leader>9", "<Cmd>BufferLineGoToBuffer -1<CR>", {})
 
 -- Moving text
 -- Move text up and down
-keymap.set("n", "<C-j>", "<Esc>:m .+1<CR>", opts)
-keymap.set("n", "<C-k>", "<Esc>:m .-2<CR>", opts)
-keymap.set("v", "<C-k>", ":m .-2<CR>", opts)
-keymap.set("v", "<C-j>", ":m .+1<CR>", opts)
-keymap.set("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
-keymap.set("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+keymap.set("n", "<A-Up>", "<Esc>:m .-2<CR>", opts)
+keymap.set("n", "<A-Down>", "<Esc>:m .+1<CR>", opts)
+keymap.set("v", "<A-Up>", ":m .-2<CR>", opts)
+keymap.set("v", "<A-Down>", ":m .+1<CR>", opts)
+keymap.set("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
+keymap.set("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
