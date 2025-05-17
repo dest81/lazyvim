@@ -20,6 +20,7 @@ keymap.set("n", "D", '"_D', opts)
 
 -- cut
 keymap.set("n", "<leader>dd", "dd", opts)
+keymap.set("v", "<leader>dd", "dd", opts)
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
