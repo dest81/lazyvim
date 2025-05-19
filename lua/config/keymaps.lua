@@ -16,6 +16,8 @@ keymap.set("v", "nn", "<Esc>", opts)
 keymap.set("n", "dd", '"_dd', opts)
 keymap.set({ "n", "v" }, "d", '"_d', opts)
 keymap.set("n", "x", '"_x', opts)
+keymap.set("n", "c", '"_c', opts)
+keymap.set("n", "C", '"_C', opts)
 keymap.set("n", "D", '"_D', opts)
 
 -- cut
@@ -54,6 +56,9 @@ keymap.set("n", "<Leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", {})
 keymap.set("n", "<Leader>5", "<Cmd>BufferLineGoToBuffer 5<CR>", {})
 keymap.set("n", "<Leader>6", "<Cmd>BufferLineGoToBuffer 6<CR>", {})
 keymap.set("n", "<Leader>9", "<Cmd>BufferLineGoToBuffer -1<CR>", {})
+
+-- Copy buffer path
+keymap.set("n", "<Leader>bc", "<Cmd>:let @+ = expand('%:p')<CR>", { desc = "Copy Buffer Path" })
 
 -- Moving text
 -- Move text up and down
