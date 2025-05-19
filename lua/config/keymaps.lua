@@ -13,12 +13,13 @@ keymap.set("i", "nn", "<Esc>", opts)
 keymap.set("v", "nn", "<Esc>", opts)
 
 -- Prevent deleting from copying
-keymap.set("n", "dd", '"_dd', opts)
+keymap.set({ "n", "v" }, "dd", '"_dd', opts)
 keymap.set({ "n", "v" }, "d", '"_d', opts)
-keymap.set("n", "x", '"_x', opts)
-keymap.set("n", "c", '"_c', opts)
-keymap.set("n", "C", '"_C', opts)
-keymap.set("n", "D", '"_D', opts)
+keymap.set({ "n", "v" }, "D", '"_D', opts)
+keymap.set({ "n", "v" }, "x", '"_x', opts)
+keymap.set({ "n", "v" }, "X", '"_X', opts)
+keymap.set({ "n", "v" }, "c", '"_c', opts)
+keymap.set({ "n", "v" }, "C", '"_C', opts)
 
 -- cut
 keymap.set("n", "<leader>dd", "dd", opts)
