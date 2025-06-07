@@ -8,9 +8,8 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- ESC to jj
-keymap.set("i", "jj", "<Esc>", opts)
-keymap.set("i", "nn", "<Esc>", opts)
-keymap.set("v", "nn", "<Esc>", opts)
+-- keymap.set("i", "jj", "<Esc>", opts)
+keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
 
 -- Prevent deleting from copying
 keymap.set({ "n", "v" }, "dd", '"_dd', opts)
@@ -28,20 +27,9 @@ keymap.set("v", "<leader>dd", "dd", opts)
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
--- New tab
-keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
-
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
-
--- Move windnow
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
@@ -56,6 +44,8 @@ keymap.set("n", "<Leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", {})
 keymap.set("n", "<Leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", {})
 keymap.set("n", "<Leader>5", "<Cmd>BufferLineGoToBuffer 5<CR>", {})
 keymap.set("n", "<Leader>6", "<Cmd>BufferLineGoToBuffer 6<CR>", {})
+keymap.set("n", "<Leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>", {})
+keymap.set("n", "<Leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", {})
 keymap.set("n", "<Leader>9", "<Cmd>BufferLineGoToBuffer -1<CR>", {})
 
 -- Copy buffer path
