@@ -18,12 +18,12 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = "super-tab" },
+    -- keymap = { preset = "super-tab" },
 
     completion = {
       list = {
         selection = {
-          preselect = false,
+          -- preselect = false,
           -- auto_insert = false,
         },
       },
