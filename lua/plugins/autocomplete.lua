@@ -18,8 +18,8 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = "super-tab", ["<Esc>"] = { "hide" } },
-    -- keymap = { preset = "default" },
+    -- 'super-tab' stopped working for some reason, let's change default to work with tab
+    keymap = { preset = "default", ["<Tab>"] = { "accept", "fallback" } },
     completion = {
       list = {
         selection = {
