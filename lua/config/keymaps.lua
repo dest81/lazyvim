@@ -23,6 +23,8 @@ keymap.set({ "n", "v" }, "C", '"_C', opts)
 -- cut
 keymap.set("n", "<leader>dd", "dd", opts)
 keymap.set("v", "<leader>dd", "dd", opts)
+keymap.set("n", "<leader>d", "d", opts)
+keymap.set("v", "<leader>d", "d", opts)
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
@@ -59,3 +61,9 @@ keymap.set("v", "<A-Up>", ":m .-2<CR>", opts)
 keymap.set("v", "<A-Down>", ":m .+1<CR>", opts)
 keymap.set("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 keymap.set("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
+-- keymap.set("n", "<C-k>", "<Esc>:m .-2<CR>", opts)
+-- keymap.set("n", "<C-j>", "<Esc>:m .+1<CR>", opts)
+-- keymap.set("v", "<C-k>", ":m .-2<CR>", opts)
+-- keymap.set("v", "<C-j>", ":m .+1<CR>", opts)
+-- keymap.set("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+-- keymap.set("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
