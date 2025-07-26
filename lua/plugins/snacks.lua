@@ -16,6 +16,7 @@ return {
         explorer = {
           -- ignored = true,
           -- hidden = true,
+          layout = { preview = "main" },
         },
       },
     },
