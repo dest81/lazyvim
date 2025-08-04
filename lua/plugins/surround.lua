@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.surround",
+  lazy = "false",
   opts = {
     mappings = {
       add = "gsa",
