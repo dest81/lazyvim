@@ -8,3 +8,4 @@ vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
 vim.o.winbar = "%=%m %f"
+vim.o.timeoutlen = 300

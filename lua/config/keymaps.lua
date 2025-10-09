@@ -10,6 +10,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- ESC to jj
 -- keymap.set("i", "jj", "<Esc>", opts)
 keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
+-- keymap.set({ "i", "v", "n" }, "jk", "<Esc>", opts)
 
 -- Prevent deleting from copying
 keymap.set({ "n", "v" }, "dd", '"_dd', opts)
@@ -22,16 +23,25 @@ keymap.set({ "n", "v" }, "C", '"_C', opts)
 
 -- cut
 keymap.set("n", "<leader>dd", "dd", opts)
-keymap.set("v", "<leader>dd", "dd", opts)
+keymap.set("v", "<leader>dd", "dd<Esc>", opts)
 keymap.set("n", "<leader>d", "d", opts)
 keymap.set("v", "<leader>d", "d", opts)
+
+keymap.set("n", "<leader>df", function()
+  vim.cmd([[
+    windo if &diff | diffoff | else | diffthis | endif
+  ]])
+end, { desc = "Toggle Diff Mode" })
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
+-- join lines without space
+keymap.set("n", "J", "gJ", opts)
+
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+-- keymap.set("n", "ss", ":split<Return>", opts)
+-- keymap.set("n", "sv", ":vsplit<Return>", opts)
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")

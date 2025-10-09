@@ -18,6 +18,8 @@ return {
           "django",
           "--preserve-blank-lines",
           "-",
+          -- "--ignore",
+          -- "T003,T004",
         },
         stdin = true,
       },
