@@ -1,22 +1,21 @@
--- https://github.com/LazyVim/LazyVim/discussions/5730
 return {
   "folke/snacks.nvim",
   opts = {
     picker = {
-      -- hidden = true,
-      win = {
-        input = {
-          keys = {
-            ["<C-h>"] = { "toggle_hidden", mode = { "i", "n" } },
-            ["<C-i>"] = { "toggle_ignored", mode = { "i", "n" } },
-          },
-        },
-      },
+      hidden = true,
       sources = {
+        files = {
+          hidden = true, -- Show hidden/dotfiles
+          ignored = false, -- Respect .gitignore
+        },
         explorer = {
-          -- ignored = true,
-          -- hidden = true,
-          layout = { preview = "main" },
+          layout = {
+            preview = "main", -- set preview layout to "main"
+          },
+          actions = {
+            toggle_hidden = { key = "C-h", mode = { "n", "i" } },
+            toggle_ignored = { key = "C-i", mode = { "n", "i" } },
+          },
         },
       },
     },
