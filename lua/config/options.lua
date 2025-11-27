@@ -9,3 +9,4 @@ vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
 vim.o.winbar = "%=%m %f"
 vim.o.timeoutlen = 300
+vim.g.root_spec = { "cwd" } -- turn off root folder autodetection
