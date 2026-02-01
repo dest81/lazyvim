@@ -12,6 +12,26 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
 -- keymap.set({ "i", "v", "n" }, "jk", "<Esc>", opts)
 
+vim.keymap.set("n", "<leader>rs", function()
+  Snacks.picker.resume()
+end, { desc = "Repeat last Snacks search" })
+
+vim.keymap.set("n", "<leader>rg", function()
+  require("snacks").picker.resume()
+end, { desc = "Repeat last Snacks grep" })
+
+-- Open all grepped (quickfix) files into buffers (no tabs, no splits)
+-- vim.keymap.set("n", "<leader>rq", function()
+--   local qf = vim.fn.getqflist()
+--   if #qf == 0 then
+--     print("Quickfix list is empty — run a grep then press <C-q> in Telescope.")
+--     return
+--   end
+--   -- Load each file into the buffer list without changing layout
+--   vim.cmd("cfdo edit")
+--   print("Loaded " .. #qf .. " files into buffers.")
+-- end, { desc = "Open all grepped files into buffers" })
+--
 -- Prevent deleting from copying
 keymap.set({ "n", "v" }, "dd", '"_dd', opts)
 keymap.set({ "n", "v" }, "d", '"_d', opts)
