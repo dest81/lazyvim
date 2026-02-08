@@ -12,11 +12,11 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
 -- keymap.set({ "i", "v", "n" }, "jk", "<Esc>", opts)
 
-vim.keymap.set("n", "<leader>rs", function()
+keymap.set("n", "<leader>rs", function()
   Snacks.picker.resume()
 end, { desc = "Repeat last Snacks search" })
 
-vim.keymap.set("n", "<leader>rg", function()
+keymap.set("n", "<leader>rg", function()
   require("snacks").picker.resume()
 end, { desc = "Repeat last Snacks grep" })
 
@@ -43,7 +43,7 @@ keymap.set({ "n", "v" }, "C", '"_C', opts)
 
 -- cut
 keymap.set("n", "<leader>dd", "dd", opts)
-keymap.set("v", "<leader>dd", "dd<Esc>", opts)
+keymap.set("v", "<leader>dd", "dd<esc>", opts)
 keymap.set("n", "<leader>d", "d", opts)
 keymap.set("v", "<leader>d", "d", opts)
 
@@ -51,17 +51,17 @@ keymap.set("n", "<leader>df", function()
   vim.cmd([[
     windo if &diff | diffoff | else | diffthis | endif
   ]])
-end, { desc = "Toggle Diff Mode" })
+end, { desc = "toggle diff mode" })
 
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
+-- jumplist
+-- keymap.set("n", "<c-m>", "<c-i>", opts)
 
 -- join lines without space
-keymap.set("n", "J", "gJ", opts)
+-- keymap.set("n", "j", "gj", opts)
 
--- Split window
--- keymap.set("n", "ss", ":split<Return>", opts)
--- keymap.set("n", "sv", ":vsplit<Return>", opts)
+-- split window
+-- keymap.set("n", "ss", ":split<return>", opts)
+-- keymap.set("n", "sv", ":vsplit<return>", opts)
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
