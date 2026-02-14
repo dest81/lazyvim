@@ -12,6 +12,7 @@ return {
                 -- autoSearchPaths = true,
                 -- diagnosticMode = "openFilesOnly",
                 -- useLibraryCodeForTypes = true,
+                ignore = { "*" },
                 typeCheckingMode = "off",
               },
             },
