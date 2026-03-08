@@ -6,3 +6,11 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- To disable auto-formatting by default for htmldjango while still allowing you to manually trigger it (or toggle it back on with <leader>uf)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "htmldjango", "html" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
