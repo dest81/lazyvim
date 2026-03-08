@@ -1,6 +1,14 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    terminal = {
+      win = {
+        style = "float", -- Forces the terminal to float
+        border = "rounded",
+        width = 0.8,
+        height = 0.8,
+      },
+    },
     picker = {
       hidden = true,
       sources = {
