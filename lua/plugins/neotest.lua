@@ -11,6 +11,8 @@ return {
         args = {
           "--reuse-db",
           "--disable-warnings",
+          "--cov", -- REQUIRED: tells pytest-cov to run
+          "--cov-report=json",
           -- "-c",
           -- "pyproject.toml",
         },
