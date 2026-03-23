@@ -14,7 +14,6 @@ return {
           -- "-c",
           -- "pyproject.toml",
         },
-        pytest_discovery = true,
         test_function_patterns = "^(test|it|ensure|must|should)",
         runner = "pytest", -- Ensure pytest is explicitly set
         -- pytest_discover_instances = true,
