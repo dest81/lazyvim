@@ -24,6 +24,7 @@ return {
             or file_path:match("_specs%.py$")
             or file_path:match("_example%.py$")
             or file_path:match("_examples%.py$")
+            or file_path:match("test_.*%.py$")
         end,
       },
     },
