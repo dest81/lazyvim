@@ -20,9 +20,19 @@ return {
           layout = {
             preview = "main", -- set preview layout to "main"
           },
+          win = {
+            list = {
+              keys = {
+                ["<C-j>"] = { "tmux_down_pane", mode = { "n", "i" } },
+              },
+            },
+          },
           actions = {
             toggle_hidden = { key = "C-h", mode = { "n", "i" } },
             toggle_ignored = { key = "C-i", mode = { "n", "i" } },
+            tmux_down_pane = function()
+              vim.fn.system("tmux select-pane -D")
+            end,
           },
         },
       },
