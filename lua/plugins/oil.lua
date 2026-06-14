@@ -9,6 +9,12 @@ return {
     },
     opts = {
       -- This configures the appearance of the floating window
+      columns = {
+        { "icon", default_file_detail = true },
+        { "permissions", highlight = "Comment" },
+        { "size", highlight = "Number" },
+        { "mtime", highlight = "String" },
+      },
       float = {
         padding = 2,
         max_width = 0.8, -- 80% of screen width (matches Snacks)
