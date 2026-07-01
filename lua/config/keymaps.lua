@@ -5,7 +5,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+keymap.set({ "n", "v" }, "<C-a>", ":<C-u>keepjumps normal! ggVG<CR>", { silent = true })
 
 -- ESC to nn
 keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
