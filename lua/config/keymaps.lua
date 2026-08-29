@@ -39,6 +39,12 @@ keymap.set("n", "<leader>df", function()
   ]])
 end, { desc = "toggle diff mode" })
 
+-- Move cursor in Insert Mode using Alt + h/j/k/l
+vim.keymap.set("i", "<A-h>", "<Left>", { desc = "Move left in insert mode" })
+vim.keymap.set("i", "<A-j>", "<Down>", { desc = "Move down in insert mode" })
+vim.keymap.set("i", "<A-k>", "<Up>", { desc = "Move up in insert mode" })
+vim.keymap.set("i", "<A-l>", "<Right>", { desc = "Move right in insert mode" })
+
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "<C-w>>")
