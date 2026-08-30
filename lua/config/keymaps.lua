@@ -10,6 +10,10 @@ keymap.set({ "n", "v" }, "<C-a>", ":<C-u>keepjumps normal! ggVG<CR>", { silent =
 -- ESC to nn
 keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
 
+-- Substitute
+vim.keymap.set("n", "<leader>bs", ":%s/\\<<C-r><C-w>\\>/", { desc = "Code: Substitute word under cursor" })
+vim.keymap.set("v", "<leader>bs", ":s/", { desc = "Code: Substitute in visual selection" })
+
 keymap.set("n", "<leader>rs", function()
   Snacks.picker.resume()
 end, { desc = "Repeat last Snacks search" })
