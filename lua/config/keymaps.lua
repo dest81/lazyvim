@@ -7,9 +7,6 @@ local opts = { noremap = true, silent = true }
 -- Select all
 keymap.set({ "n", "v" }, "<C-a>", ":<C-u>keepjumps normal! ggVG<CR>", { silent = true })
 
--- ESC to nn
-keymap.set({ "i", "v", "n" }, "nn", "<Esc>", opts)
-
 -- Substitute
 vim.keymap.set("n", "<leader>bs", ":%s/\\<<C-r><C-w>\\>/", { desc = "Code: Substitute word under cursor" })
 vim.keymap.set("v", "<leader>bs", ":s/", { desc = "Code: Substitute in visual selection" })
@@ -22,20 +19,17 @@ keymap.set("n", "<leader>rg", function()
   require("snacks").picker.resume()
 end, { desc = "Repeat last Snacks grep" })
 
--- Prevent deleting from copying
-keymap.set({ "n", "v" }, "dd", '"_dd', opts)
-keymap.set({ "n", "v" }, "d", '"_d', opts)
-keymap.set({ "n", "v" }, "D", '"_D', opts)
-keymap.set({ "n", "v" }, "x", '"_x', opts)
-keymap.set({ "n", "v" }, "X", '"_X', opts)
-keymap.set({ "n", "v" }, "c", '"_c', opts)
-keymap.set({ "n", "v" }, "C", '"_C', opts)
+-- Delete without yanking
+vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { desc = "Delete line without yanking" })
+vim.keymap.set({ "n", "v" }, "c", '"_c', { desc = "Change without yanking" })
+vim.keymap.set({ "n", "v" }, "C", '"_C', { desc = "Change line without yanking" })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete char without yanking" })
 
--- cut
-keymap.set("n", "<leader>dd", "dd", opts)
-keymap.set("v", "<leader>dd", "dd<esc>", opts)
-keymap.set("n", "<leader>d", "d", opts)
-keymap.set("v", "<leader>d", "d", opts)
+-- Remap 'm' to act as the new 'Cut' (what 'd' used to do)
+vim.keymap.set({ "n", "v" }, "m", "d", { desc = "Cut" })
+vim.keymap.set({ "n", "v" }, "mm", "_dd", { desc = "Cut full line" })
+vim.keymap.set({ "n", "v" }, "M", "D", { desc = "Cut line" })
 
 keymap.set("n", "<leader>df", function()
   vim.cmd([[
