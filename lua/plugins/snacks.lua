@@ -1,6 +1,7 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    words = { enabled = false }, -- Disables automatic word highlighting under cursor
     terminal = {
       win = {
         style = "float", -- Forces the terminal to float
