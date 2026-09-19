@@ -7,6 +7,9 @@ local opts = { noremap = true, silent = true }
 -- Select all
 keymap.set({ "n", "v" }, "<C-a>", ":<C-u>keepjumps normal! ggVG<CR>", { silent = true })
 
+-- ESC
+keymap.set({ "i", "v" }, "jj", "<Esc>", opts)
+
 -- Substitute
 vim.keymap.set("n", "<leader>bs", ":%s/\\<<C-r><C-w>\\>/", { desc = "Code: Substitute word under cursor" })
 vim.keymap.set("v", "<leader>bs", ":s/", { desc = "Code: Substitute in visual selection" })
@@ -26,10 +29,10 @@ vim.keymap.set({ "n", "v" }, "c", '"_c', { desc = "Change without yanking" })
 vim.keymap.set({ "n", "v" }, "C", '"_C', { desc = "Change line without yanking" })
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete char without yanking" })
 
--- Remap 'm' to act as the new 'Cut' (what 'd' used to do)
-vim.keymap.set({ "n", "v" }, "m", "d", { desc = "Cut" })
-vim.keymap.set({ "n", "v" }, "mm", "_dd", { desc = "Cut full line" })
-vim.keymap.set({ "n", "v" }, "M", "D", { desc = "Cut line" })
+-- Cut
+vim.keymap.set({ "v" }, "x", '"+d', { desc = "Cut to system clipboard" })
+vim.keymap.set("n", "<leader>X", '"+dd', { desc = "Cut full line to system clipboard" })
+vim.keymap.set("n", "X", '"+D', { desc = "Cut line to end to system clipboard" })
 
 keymap.set("n", "<leader>df", function()
   vim.cmd([[
