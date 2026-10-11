@@ -8,11 +8,25 @@ local opts = { noremap = true, silent = true }
 keymap.set({ "n", "v" }, "<C-a>", ":<C-u>keepjumps normal! ggVG<CR>", { silent = true })
 
 -- ESC
-keymap.set({ "i", "v" }, "jj", "<Esc>", opts)
+keymap.set({ "i", "v" }, "mm", "<Esc>", opts)
+
+-- block 'qq' and keeping macro recording for all other keys
+vim.keymap.set("n", "q", function()
+  if vim.fn.reg_recording() ~= "" then
+    return "q"
+  end
+  local char = vim.fn.getcharstr()
+  if char == "q" then
+    return ""
+  end
+
+  -- Otherwise, start recording to the chosen register
+  return "q" .. char
+end, { expr = true, desc = "Block qq but allow other macros" })
 
 -- Substitute
-vim.keymap.set("n", "<leader>bs", ":%s/\\<<C-r><C-w>\\>/", { desc = "Code: Substitute word under cursor" })
-vim.keymap.set("v", "<leader>bs", ":s/", { desc = "Code: Substitute in visual selection" })
+vim.keymap.set("n", "<leader>ss", ":%s/\\<<C-r><C-w>\\>/", { desc = "Code: Substitute word under cursor" })
+vim.keymap.set("v", "<leader>ss", ":s/", { desc = "Code: Substitute in visual selection" })
 
 keymap.set("n", "<leader>rs", function()
   Snacks.picker.resume()
